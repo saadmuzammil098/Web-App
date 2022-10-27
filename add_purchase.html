@@ -1,0 +1,236 @@
+
+<!Doctype Html>
+<Html>   
+<Head>    
+<Title>   
+Backend Reporting
+</Title>
+<style type=text/css> 
+body 
+{
+height: 135vh;
+margin-top: 80px;
+padding: 30px;
+background-size: cover;
+font-family: Verdana;
+}
+header {
+background-color: black;
+position: fixed;
+left: 0;
+right: 0;
+top: 5px;
+height: 30px;
+display: flex;
+align-items: center;
+box-shadow: 0 0 25px 0 black;
+}
+header * {
+display: inline;
+}
+header li {
+margin: 40px;
+}
+header li a {
+color: white;
+text-decoration: none;
+}
+</style> 
+</Head>
+<Body> 
+<header>
+<nav>
+<ul>
+<li>
+<a href="{{ url_for('Index') }}"> Home </a>
+</li>
+<li>
+<a href="{{ url_for('profile') }}"> Profile </a>
+</li>
+<li>
+<a href="{{ url_for('upfront') }}"> Upfront Info </a>
+</li>
+<li> <a href="{{ url_for('add_purchase') }}"> Add/Purchase </a>
+</li>
+<li> <a href="{{ url_for('logout') }}"> Logout </a>
+</li>
+</ul>
+</nav>
+</header>
+</Body> 
+</Html>
+
+<div id="myModal" class="modal fade" role="dialog">
+
+
+   <div class="modal-dialog">
+
+
+      <div class="modal-content">
+
+
+         <div class="modal-header">
+         
+         <form action="{{ url_for('search3') }}" method="POST">
+
+             <label>Search Upfront</label>
+         	<input type="text" name="username" required="1">
+         	<input type="search" list="backends" class="form-control" name="backend" required="1">
+             <datalist id="backends">
+                 <option value="Orion star">
+                 <option value="Juwa">
+                 <option value="Game Vault">
+               </datalist>
+             <input type="submit" value="search">
+         </form>
+         <td>{{data}}</td>
+
+
+            
+
+            
+            <h4 class="modal-title">Please Insert Data</h4>
+
+
+         </div>
+
+
+         <div class="modal-body">
+
+
+            <form action="{{ url_for('insert2') }}" method="POST">
+            
+            
+                <div class="form-group">
+
+
+                   <label>Client name:</label> </br>
+                   <input type="text" class="form-control" name="client_name" required="1">
+
+
+                </div>
+
+
+               <div class="form-group">
+
+
+                  <label>Username:</label> </br>
+                  <input type="text" class="form-control" name="username" required="1">
+
+
+               </div>
+
+
+                <div class="form-group">
+
+
+                   <label>Backend:</label> </br>
+                   <input type="search" list="backends" class="form-control" name="backend" required="1">
+                   <datalist id="backends">
+                       <option value="Orion star">
+                       <option value="Juwa">
+                       <option value="Game Vault">
+                     </datalist>
+
+
+
+               </div>
+                        
+
+                <div class="form-group">
+
+
+                  <label>upfront given:</label> </br>
+                  
+                  <input type="text" class="form-control" name="upfront_given" required="1">
+
+
+               </div>
+                  <div class="form-group">
+
+
+                    <label>Date of purchase(YYYY-MM-DD):</label> </br>
+                    <input type="text" class="form-control" name="date_of_purchase" required="1">
+
+
+                 </div>
+               
+                <div class="form-group">
+
+
+                  <label>Credits paid:</label> </br>
+                   <input type="search" list="credits" class="form-control" name="credits_paid" required="1">
+                   <datalist id="credits">
+                   
+                      <option>Yes</options>
+                      <option>No</options>
+                      
+                    </datalist>
+                        <div class="form-group">
+
+
+                          <label>Amount in (PKR,USD):</label> </br>
+                          <input type="text" class="form-control" name="amount_in" required="1">
+
+
+                       </div>
+                       <div class="form-group">
+
+
+                         <label>Dollar rate:</label> </br>
+                         <input type="text" class="form-control" name="dollar_rate" required="1">
+
+
+                      </div>  
+                <div class="form-group">
+
+
+                  <label>Credits added:</label> </br>
+                  <input type="text" class="form-control" name="credits_added" required="1">
+
+
+               </div>
+
+                 <div class="form-group">
+                
+                
+                   <label>Credits to be added:</label> </br>
+                   <input type="text" class="form-control" name="credits_to_be_added" required="1">
+                
+                
+                </div>
+
+
+
+
+               <div class="form-group">
+
+
+                  <button class="btn btn-primary" type="submit">Insert Data</button>
+
+
+               </div>
+
+
+            </form>
+
+
+         </div>
+
+
+
+
+      </div>
+
+
+   </div>
+
+
+</div>
+              
+</div>
+
+
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>

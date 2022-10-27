@@ -1,0 +1,59 @@
+
+<!Doctype Html>
+<Html>   
+<Head>    
+<Title>   
+Backend Reporting
+</Title>
+<style type=text/css> 
+body 
+{
+height: 135vh;
+margin-top: 80px;
+padding: 30px;
+background-size: cover;
+font-family: Verdana;
+}
+header {
+background-color: black;
+position: fixed;
+left: 0;
+right: 0;
+top: 5px;
+height: 30px;
+display: flex;
+align-items: center;
+box-shadow: 0 0 25px 0 black;
+}
+header * {
+display: inline;
+}
+header li {
+margin: 40px;
+}
+header li a {
+color: white;
+text-decoration: none;
+}
+</style> 
+</Head>
+<Body> 
+<header>
+<nav>
+<ul>
+<li>
+<a href="{{ url_for('Index') }}"> Home </a>
+</li>
+<li>
+<a href="{{ url_for('profile') }}"> Profile </a>
+</li>
+<li>
+<a href="{{ url_for('upfront') }}"> Upfront Info </a>
+</li>
+<li> <a href="{{ url_for('logout') }}"> Logout </a>
+</li>
+</ul>
+</nav>
+</header>
+</Body> 
+</Html>
